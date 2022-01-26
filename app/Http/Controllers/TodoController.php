@@ -37,14 +37,14 @@ class TodoController extends Controller
    }
    public function find()
     {
-        return view('find', ['input' => '']);
+        return view('find', ['date' => '']);
     }
     public function search(Request $request)
     {
-        $books = Todo::find($request->input);
+        $books = Todo::find($request->date);
         $param = [
-            'book' => $books,
-            'input' => $request->input
+            'books' => $books,
+            'date' => $request->date
         ];
         return view('find', $param);
     }
