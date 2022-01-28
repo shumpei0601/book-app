@@ -41,11 +41,8 @@ class TodoController extends Controller
     }
     public function search(Request $request)
     {
-        $books = Todo::find($request->date);
-        $param = [
-            'books' => $books,
-            'date' => $request->date
-        ];
-        return view('find', $param);
+        $date = $request->date;
+        $books = Todo::whereDate('created_at', $date)->get();
+        return view('find', compact('books', 'date'));
     }
 }

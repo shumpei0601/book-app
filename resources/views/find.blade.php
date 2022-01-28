@@ -8,7 +8,7 @@
 </head>
 <body>
   <p>検索</p>
-  @if (@isset($book))
+  @if (@isset($books))
   <table>
     <tr>
       <th>日付</th>
